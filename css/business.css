@@ -1,0 +1,283 @@
+@import url('./common.css');
+
+/* =====================================================
+    BASE
+===================================================== */
+section {
+    padding: 0;
+}
+
+/* =====================================================
+    슬로건 히어로
+===================================================== */
+#slogan {
+    align-content: end;
+    min-height: clamp(40vh, 60vw, 100vh);
+    padding: 20px clamp(20px, 10vw, 350px);
+    padding-bottom: clamp(50px, 10vw, 150px);
+    overflow: hidden;
+}
+
+#slogan > h2 {
+    font-size: clamp(50px, 9vw, 152px);
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    color: var(--black);
+}
+
+.slogan_line {
+    display: block;
+    opacity: 0;
+    animation: sloganFade 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slogan_line__left {
+    transform: translateX(-60px);
+    animation-delay: 0.1s;
+}
+
+.slogan_line__right {
+    transform: translateX(60px);
+    animation-delay: 0.3s;
+}
+
+@keyframes sloganFade {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =====================================================
+    레이아웃 — 콘텐츠 / 레이블 / 섹션
+===================================================== */
+.business_content {
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(20px, 5vw, 120px);
+    padding: 20px clamp(20px, 10vw, 350px);
+}
+
+.business_label {
+    flex: 1;
+    width: clamp(120px, 20vw, 300px);
+    position: sticky;
+    top: 200px;
+    align-self: flex-start;
+}
+
+.business_label h2 {
+    font-size: clamp(30px, 4vw, 62px);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--ink);
+}
+
+.cmd_letter {
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--ink2);
+    transition: color 0.4s ease, -webkit-text-stroke-color 0.4s ease;
+    font-family: "GMarketSans", "Black Han Sans", sans-serif;
+}
+
+.cmd_letter.active {
+    color: var(--ink);
+    -webkit-text-stroke-color: transparent;
+}
+
+.business_sections {
+    flex: 3;
+    min-width: 0;
+    height: auto;
+}
+
+.business_sections section {
+    padding-left: 0;
+    padding-right: 0;
+    min-height: unset;
+    margin-bottom: clamp(40px, 10vw, 160px);
+}
+
+.business_sections section:last-child {
+    margin-bottom: 0;
+}
+
+/* =====================================================
+    서비스 상세 카드
+===================================================== */
+.service_detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(30px, 5vw, 80px);
+    align-items: start;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.65s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service_detail.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service_detail.reverse {
+    direction: rtl;
+}
+
+.service_detail.reverse > * {
+    direction: ltr;
+}
+
+.service_detail_img {
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 4 / 2;
+}
+
+.service_detail_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service_detail_img:hover img {
+    transform: scale(1.05);
+}
+
+.service_detail_info {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 3vw, 32px);
+    justify-content: center;
+}
+
+.service_detail_head {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.service_tag {
+    display: none;
+}
+
+.service_detail_title {
+    font-size: clamp(30px, 4vw, 58px);
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    border-bottom: 1px solid var(--ink2);
+    padding-bottom: clamp(12px, 2vw, 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+.service_detail_title .en {
+    font-size: clamp(12px, 1.5vw, 18px);
+    color: var(--ink2);
+    margin-bottom: clamp(4px, 1vw, 8px);
+    font-weight: 400;
+}
+
+.service_desc {
+    font-size: clamp(12px, 1.3vw, 15px);
+    line-height: 1.9;
+    color: var(--ink2);
+}
+
+.service_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.service_list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 0;
+    font-size: clamp(15px, 1.3vw, 18px);
+    font-weight: 600;
+    color: var(--ink1);
+    border-top: 1px solid var(--ink3);
+    transition: letter-spacing 0.4s ease, color 0.2s ease;
+    cursor: default;
+}
+
+.service_list li:last-child {
+    border-bottom: 1px solid var(--ink3);
+}
+
+.service_list li:hover {
+    letter-spacing: 0.04em;
+    color: var(--ink);
+}
+
+.service_list li i {
+    font-size: 13px;
+    color: var(--ink2);
+    flex-shrink: 0;
+}
+
+/* =====================================================
+    반응형
+===================================================== */
+.mo-br { display: none; }
+
+@media (max-width: 1020px) {
+        #about {
+        margin-top: 0;
+    }
+
+    .business_content {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .business_label {
+        position: static;
+        width: 100%;
+    }
+
+    .service_detail {
+        grid-template-columns: 1fr;
+        padding-bottom: clamp(40px, 8vw, 80px);
+    }
+    .service_detail:last-of-type {
+        padding-bottom: 0;
+    }
+
+    .service_detail.reverse {
+        direction: ltr;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 20px clamp(10px, 5vw, 40px);
+    }
+
+    #slogan {
+        padding: 20px clamp(10px, 5vw, 40px);
+        padding-bottom: clamp(50px, 10vw, 150px);
+    }
+
+    .business_content {
+        padding: 20px clamp(10px, 5vw, 40px);
+    }
+}
+
+@media (max-width: 575px) {
+
+    .business_label {
+        display: none;
+    }
+
+    .pc-br { display: none; }
+    .mo-br { display: inline; }
+}

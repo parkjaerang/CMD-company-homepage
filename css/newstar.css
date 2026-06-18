@@ -1,0 +1,751 @@
+@import url(./common.css);
+/* =====================================================
+    BASE — 섹션 공통
+===================================================== */
+section {
+    min-height: unset;
+    padding: clamp(15px, 2vw, 30px) clamp(20px, 10vw, 350px);
+}
+
+/* =====================================================
+    포트폴리오 메인 이미지
+===================================================== */
+#portfolio_main {
+    width: 100%;
+    aspect-ratio: 16/9;
+    padding: 0;
+    position: relative;
+    margin-top: var(--header-h);
+}
+
+#portfolio_main .portfolio_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#portfolio_main .logo_box {
+    width: 100%;
+    height: 100%;
+    padding: clamp(20px, 3vw, 50px);
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: right;
+    align-items: start;
+}
+
+#portfolio_main .logo_box .logo {
+    width: clamp(100px, 20vw, 200px);
+}
+
+#introduce figure > .logo {
+    width: fit-content;
+    height: fit-content;
+}
+
+/* =====================================================
+    텍스트 박스 공통
+===================================================== */
+.text_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    flex: 8;
+    padding: 0 50px;
+    color: var(--ink2);
+    letter-spacing: 0.05em;
+}
+
+.text_box .title {
+    font-size: clamp(16px, 4vw, 24px);
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--ink1);
+}
+
+.text_box .fa-solid {
+    margin: auto;
+}
+
+.text_box .desc {
+    font-size: clamp(12px, 2vw, 16px);
+    line-height: 1.8;
+}
+
+#introduce .text_box .keyword {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: var(--ink2);
+    margin-top: 10px;
+}
+
+.result_list li {
+    margin-bottom: 10px;
+    font-size: clamp(12px, 2vw, 16px);
+}
+
+/* =====================================================
+    SNS 목록
+===================================================== */
+.sns_list dt {
+    font-size: clamp(18px, .5vw, 20px);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.sns_list dd {
+    margin-bottom: 5px;
+    font-size: clamp(12px, 2vw, 16px);
+}
+
+/* =====================================================
+    섹션 그룹 — 배경 테마
+===================================================== */
+.section_group {
+    position: relative;
+    padding: clamp(40px, 5vw, 80px) 0;
+}
+
+/* 따뜻한 아이보리 크림 — 뉴스타 벽면/전체 배경 톤 */
+.group_info {
+    background-color: #F9F6F1;
+}
+
+.group_info .text_box {
+    color: #766352;
+}
+
+.group_info .text_box .title {
+    color: #2E2416;
+}
+
+.group_info .result_list li {
+    color: #766352;
+}
+
+/* 부드러운 웜 베이지 — 뉴스타 인테리어 바닥/가구 톤 */
+.group_sns,
+.group_interior {
+    background-color: #EDE8DE;
+}
+
+.group_sns .text_box .title,
+.group_interior .text_box .title {
+    color: #2E2416;
+    margin-bottom: 10px;
+    font-size: clamp(20px, 2vw, 26px);
+}
+
+.group_sns .text_box {
+    color: #5E5242;
+}
+
+.group_sns .sns_list dt {
+    color: #2E2416;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: clamp(16px, 1.5vw, 20px);
+}
+
+.group_sns .sns_list dd,
+.group_interior .text_box .desc {
+    color: #766352;
+    line-height: 1.8;
+    font-size: clamp(12px, 1.3vw, 16px);
+}
+
+.group_sns .img_card > h2 {
+    color: #766352;
+}
+
+/* 샴페인 베이지 — 뉴스타 골드 사이니지/가구 톤 */
+.group_homepage {
+    background-color: #C8B99A;
+    color: #1E1810;
+}
+
+#fixed_contact_btn {
+    background: #766352;
+}
+
+#fixed_contact_btn:hover {
+    background: #867565;
+}
+
+header {
+    border-bottom: 1px solid #766352;
+}
+
+#contact_us .open_modal {
+    color: #766352;
+}
+
+#contact_us .open_modal_sub {
+    color: #766352;
+    border: clamp(1px, .2vw, 3px) solid #766352;
+}
+
+#contact_us .open_modal_sub:hover {
+    background-color: #766352;
+    color: var(--white);
+}
+
+/* =====================================================
+    홈페이지 미리보기
+===================================================== */
+#homepage {
+    min-height: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage_preview_wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.homepage_preview_header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.preview_label {
+    font-size: 17px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.preview_size_display {
+    font-size: 14px;
+    opacity: 0.6;
+    min-width: 80px;
+}
+
+.homepage_preview_stage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    zoom: 0.8;
+}
+
+.homepage_preview_window {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(30, 24, 16, 0.12);
+    box-shadow: 0 8px 40px rgba(30, 24, 16, 0.10);
+    background: #fff;
+    transition: width 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.preview_frame_wrap {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.preview_img.pc_img {
+    display: block;
+    max-width: none;
+    flex-shrink: 0;
+}
+
+.preview_img.mobile_img {
+    display: none;
+    width: 100%;
+    height: auto;
+    max-width: none;
+}
+
+.homepage_preview_window.show_mobile .preview_img.pc_img {
+    display: none;
+}
+
+.homepage_preview_window.show_mobile .preview_img.mobile_img {
+    display: block;
+}
+
+.preview_device_indicator {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.indicator_item {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    opacity: 0.35;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.3s;
+}
+
+.indicator_item.active {
+    opacity: 1;
+}
+
+#homepage .homepage_address {
+    width: 100%;
+    padding: 0 clamp(40px, 5vw, 100px);
+    display: flex;
+    justify-content: center;
+}
+
+#homepage .homepage_address a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+#homepage .homepage_address .addr_arrow {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    font-size: clamp(14px, 2vw, 18px);
+    color: #1E1810;
+    padding-top: 2px;
+    width: 0;
+}
+
+#homepage .homepage_address a:hover .addr_arrow {
+    opacity: 1;
+    transform: translateX(0);
+    min-width: none;
+}
+
+/* =====================================================
+    디바이스 토글 버튼
+===================================================== */
+.preview_toggle_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.preview_toggle_btns {
+    display: flex;
+    gap: 6px;
+}
+
+.preview_toggle_hint {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: rgba(30, 24, 16, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.preview_toggle_btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border: 1px solid rgba(30, 24, 16, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    font-size: clamp(10px, 2vw, 15px);
+    letter-spacing: 0.08em;
+    color: #1E1810;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.preview_toggle_btn > p {
+    padding-top: 3px;
+}
+
+.preview_toggle_btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(30, 24, 16, 0.5);
+}
+
+/* 골드 다크브라운 — 뉴스타 사이니지 골드 레터링 참고 */
+.preview_toggle_btn.active {
+    background: #766352;
+    color: #F9F6F1;
+    border-color: #766352;
+}
+
+.full_page_wrap {
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 clamp(40px, 5vw, 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.full_page_wrap .preview_label {
+    margin-bottom: 4px;
+}
+
+.full_page_grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.full_page_grid .full_page:first-child {
+    grid-column: span 2;
+}
+
+.full_page {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 16px rgba(30, 24, 16, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.full_page:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(30, 24, 16, 0.14);
+}
+
+/* =====================================================
+    이미지 카드 슬라이더
+===================================================== */
+.img_card {
+    min-height: unset;
+    padding: clamp(10px, 2vw, 20px) 0 clamp(20px, 3vw, 50px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img_card > h2 {
+    font-size: clamp(12px, 1.5vw, 16px);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink2);
+    font-weight: 700;
+}
+
+.img_slider_wrap {
+    width: 100%;
+    overflow: hidden;
+    cursor: grab;
+    user-select: none;
+}
+
+.img_slider_wrap.is_dragging {
+    cursor: grabbing;
+}
+
+.img_track {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    will-change: transform;
+    padding: 20px 0;
+}
+
+.img_slide {
+    flex: 0 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity 0.5s ease,
+                filter 0.5s ease;
+    transform: scale(0.75);
+    opacity: 0.45;
+    filter: blur(2px);
+    pointer-events: none;
+}
+
+.img_slide.active {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0px);
+    pointer-events: auto;
+}
+
+.img_slide.near {
+    transform: scale(0.88);
+    opacity: 0.65;
+    filter: blur(1px);
+}
+
+.img_slide img {
+    width: 250px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+/* =====================================================
+    인테리어 그리드
+===================================================== */
+#interior {
+    padding-bottom: clamp(40px, 5vw, 80px);
+}
+
+.interior_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: stretch;
+    padding: 20px 50px;
+}
+
+.interior_featured {
+    display: flex;
+}
+
+.interior_featured img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.interior_sub_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-content: stretch;
+}
+
+.interior_sub_item {
+    overflow: hidden;
+    display: flex;
+    aspect-ratio: 1 / 1;
+}
+
+.interior_sub_item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.interior_sub_item:hover img {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+}
+
+.interior_wide {
+    grid-column: span 2;
+}
+
+.interior_wide img {
+    aspect-ratio: 2 / 1;
+}
+
+/* =====================================================
+    커스텀 헤더 (뒤로가기)
+===================================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: clamp(14px, 3vw, 24px) clamp(16px, 3.5vw, 28px);
+    transform: translateY(0) !important;
+}
+
+header[data-custom].hide_header {
+    transform: translateY(0) !important;
+}
+
+.back_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #766352;
+    font-size: clamp(18px, 2.5vw, 42px);
+    width: clamp(36px, 5vw, 50px);
+    height: clamp(36px, 5vw, 50px);
+    transform: translateX(10px);
+    transition: transform 0.35s ease, color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 6px rgba(249,246,241,0.9), 0 0 12px rgba(249,246,241,0.6);
+}
+
+.back_btn:hover {
+    transform: translateX(0);
+}
+
+/* =====================================================
+    커스텀 스크롤바
+===================================================== */
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.custom_scrollbar {
+    position: fixed;
+    right: 6px;
+    top: 0;
+    width: 4px;
+    height: 100vh;
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.custom_scrollbar.visible {
+    opacity: 1;
+}
+
+.custom_scrollbar_thumb {
+    position: absolute;
+    width: 100%;
+    background: rgba(184, 150, 90, 0.55);
+    border-radius: 99px;
+    cursor: grab;
+    transition: background 0.2s;
+}
+
+.custom_scrollbar_thumb:hover {
+    background: rgba(184, 150, 90, 0.75);
+    width: 6px;
+    margin-left: -1px;
+}
+
+.custom_scrollbar_thumb.dragging {
+    cursor: grabbing;
+    background: rgba(184, 150, 90, 0.75);
+    width: 6px;
+    margin-left: -1px;
+}
+
+.top_btn {
+    color: #766352;
+    opacity: 0.7;
+}
+.top_btn:hover {
+    opacity: 1;
+    color: #766352;
+}
+
+/* =====================================================
+    반응형
+===================================================== */
+@media (max-width: 768px) {
+    #portfolio_main{
+        margin-top: calc(var(--header-h) - 2px);
+    }
+
+    header{
+        border-bottom: 1px solid rgba(184, 150, 90, 0.4);
+    }
+
+    .back_btn {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    section {
+        padding: clamp(24px, 5vw, 40px) clamp(16px, 5vw, 28px);
+    }
+
+    .page_intro {
+        padding: clamp(20px, 5vw, 50px);
+        padding-bottom: clamp(80px, 18vw, 130px);
+        align-items: end;
+    }
+
+    .page_intro .overlay > h3 {
+        font-size: clamp(14px, 4vw, 22px);
+    }
+
+    .page_intro .overlay > h4 {
+        font-size: clamp(38px, 12vw, 66px);
+    }
+
+    .drag_hint {
+        bottom: clamp(24px, 5vw, 48px);
+    }
+
+    .text_box {
+        border-left: none;
+        padding: 12px 0;
+    }
+
+    .homepage_preview_stage {
+        height: auto;
+        overflow: visible;
+        zoom: 0.65;
+    }
+
+    .homepage_preview_header {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .preview_device_indicator {
+        display: none;
+    }
+
+    .preview_size_display {
+        display: none;
+    }
+
+    .homepage_preview_window {
+        width: 100% !important;
+        transition: none !important;
+    }
+
+    .preview_frame_wrap {
+        display: block;
+    }
+
+    .preview_img.pc_img,
+    .homepage_preview_window.show_mobile .preview_img.mobile_img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+    }
+
+    .indicator_item {
+        font-size: 13px;
+    }
+
+    .img_slide img {
+        width: 140px;
+    }
+
+    .interior_grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+    .interior_featured img {
+        aspect-ratio: 4/3;
+    }
+
+    .interior_sub_grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

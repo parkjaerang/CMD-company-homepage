@@ -1,0 +1,412 @@
+@import url(./common.css);
+/* =====================================================
+    BASE — 섹션 공통
+===================================================== */
+section {
+    min-height: unset;
+    padding: clamp(15px, 2vw, 30px) clamp(20px, 10vw, 350px);
+}
+
+/* =====================================================
+    포트폴리오 메인 이미지
+===================================================== */
+#portfolio_main {
+    width: 100%;
+    aspect-ratio: 16/9;
+    padding: 0;
+    position: relative;
+    margin-top: var(--header-h);
+}
+
+#portfolio_main .portfolio_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#portfolio_main .logo_box {
+    width: 100%;
+    height: 100%;
+    padding: clamp(20px, 3vw, 50px);
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: right;
+    align-items: start;
+}
+
+#portfolio_main .logo_box .logo {
+    width: clamp(100px, 20vw, 200px);
+}
+
+#introduce figure > .logo {
+    width: fit-content;
+    height: fit-content;
+}
+
+/* =====================================================
+    텍스트 박스 공통
+===================================================== */
+.text_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    flex: 8;
+    padding: 0 50px;
+    color: #7A6A58;
+    letter-spacing: 0.05em;
+}
+
+.text_box .title {
+    font-size: clamp(16px, 4vw, 24px);
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #36332E;
+}
+
+.text_box .fa-solid {
+    margin: auto;
+}
+
+.text_box .desc {
+    font-size: clamp(12px, 2vw, 16px);
+    line-height: 1.8;
+}
+
+#introduce .text_box .keyword {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: var(--ink2);
+    margin-top: 10px;
+}
+
+.result_list li {
+    margin-bottom: 10px;
+    font-size: clamp(12px, 2vw, 16px);
+}
+
+
+/* =====================================================
+    섹션 그룹 — 배경 테마
+===================================================== */
+.section_group {
+    position: relative;
+    padding: clamp(40px, 5vw, 80px) 0;
+}
+
+.group_info {
+    background-color: #EDF4F8;
+}
+
+.group_sns,
+.group_interior {
+    background-color: #E8E4DE;
+}
+
+.group_sns .text_box .title,
+.group_interior .text_box .title {
+    color: #36332E;
+    margin-bottom: 10px;
+    font-size: clamp(20px, 2vw, 26px);
+}
+
+.group_sns .text_box {
+    color: #7A6A58;
+}
+
+.group_sns .sns_list dt {
+    color: #36332E;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: clamp(16px, 1.5vw, 20px);
+}
+
+.group_sns .sns_list dd,
+.group_interior .text_box .desc {
+    color: #8A8078;
+    line-height: 1.8;
+    font-size: clamp(12px, 1.3vw, 16px);
+}
+
+.group_sns .img_card > h2 {
+    color: #8A8078;
+}
+
+.group_homepage {
+    background-color: #D6D1CA;
+    color: #36332E;
+}
+
+#fixed_contact_btn {
+    background: #7AAFC8;
+}
+
+#fixed_contact_btn:hover {
+    background: #8EB8CC;
+}
+
+header {
+    border-bottom: 1px solid #7AAFC8;
+}
+
+#contact_us .open_modal {
+    color: #7AAFC8;
+}
+
+#contact_us .open_modal_sub {
+    color: #7AAFC8;
+    border: clamp(1px, .2vw, 3px) solid #7AAFC8;
+}
+
+/* =====================================================
+    인테리어 그리드
+===================================================== */
+#interior {
+    padding-bottom: clamp(40px, 5vw, 80px);
+}
+
+.interior_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 20px 50px;
+}
+
+.interior_featured {
+    display: flex;
+}
+
+.interior_featured img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.interior_sub_item {
+    overflow: hidden;
+    display: flex;
+}
+
+.interior_sub_item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.interior_sub_item:hover img {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+}
+
+.interior_wide {
+    grid-column: span 2;
+}
+
+.interior_wide img {
+    aspect-ratio: 2 / 1;
+}
+/* =====================================================
+    커스텀 헤더 (뒤로가기)
+===================================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: clamp(14px, 3vw, 24px) clamp(16px, 3.5vw, 28px);
+    transform: translateY(0) !important;
+}
+
+header[data-custom].hide_header {
+    transform: translateY(0) !important;
+}
+
+.back_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #7AAFC8;
+    font-size: clamp(18px, 2.5vw, 42px);
+    width: clamp(36px, 5vw, 50px);
+    height: clamp(36px, 5vw, 50px);
+    transform: translateX(10px);
+    transition: transform 0.35s ease, color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 8px rgba(168,200,220,0.6), 0 0 16px rgba(168,200,220,0.3);
+}
+
+header.light .back_btn {
+    color: #A8C8DC;
+    text-shadow: 0 1px 6px rgba(168,200,220,0.5);
+}
+
+.back_btn:hover {
+    transform: translateX(0);
+}
+
+/* =====================================================
+    커스텀 스크롤바
+===================================================== */
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.custom_scrollbar {
+    position: fixed;
+    right: 6px;
+    top: 0;
+    width: 4px;
+    height: 100vh;
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.custom_scrollbar.visible {
+    opacity: 1;
+}
+
+.custom_scrollbar_thumb {
+    position: absolute;
+    width: 100%;
+    background: #3d2b1f96;
+    border-radius: 99px;
+    cursor: grab;
+    transition: background 0.2s;
+}
+
+.custom_scrollbar_thumb:hover {
+    background: #3d2b1faf;
+    width: 6px;
+    margin-left: -1px;
+}
+
+.custom_scrollbar_thumb.dragging {
+    cursor: grabbing;
+    background: #3d2b1faf;
+    width: 6px;
+    margin-left: -1px;
+}
+
+.top_btn {
+    color: #7AAFC8;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.top_btn:hover {
+    color: #7AAFC8;
+    opacity: 1;
+}
+
+/* =====================================================
+    반응형
+===================================================== */
+@media (max-width: 768px) {
+    #portfolio_main{
+        margin-top: calc(var(--header-h) - 2px);
+    }
+
+    header{
+        border-bottom: 1px solid #3d2b1f96;
+    }
+
+    .back_btn {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    section {
+        padding: clamp(24px, 5vw, 40px) clamp(16px, 5vw, 28px);
+    }
+
+    .page_intro {
+        padding: clamp(20px, 5vw, 50px);
+        padding-bottom: clamp(80px, 18vw, 130px);
+        align-items: end;
+    }
+
+    .page_intro .overlay > h3 {
+        font-size: clamp(14px, 4vw, 22px);
+    }
+
+    .page_intro .overlay > h4 {
+        font-size: clamp(38px, 12vw, 66px);
+    }
+
+    .drag_hint {
+        bottom: clamp(24px, 5vw, 48px);
+    }
+
+    .text_box {
+        border-left: none;
+        padding: 12px 0;
+    }
+
+    .homepage_preview_stage {
+        height: auto;
+        overflow: visible;
+        zoom: 0.65;
+    }
+
+    .homepage_preview_header {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .preview_device_indicator {
+        display: none;
+    }
+
+    .preview_size_display {
+        display: none;
+    }
+
+    .homepage_preview_window {
+        width: 100% !important;
+        transition: none !important;
+    }
+
+    .preview_frame_wrap {
+        display: block;
+    }
+
+    .preview_img.pc_img,
+    .homepage_preview_window.show_mobile .preview_img.mobile_img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+    }
+
+    .indicator_item {
+        font-size: 13px;
+    }
+
+    .img_slide img {
+        width: 140px;
+    }
+
+    .interior_grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+    .interior_featured img {
+        aspect-ratio: 4/3;
+    }
+
+    .interior_sub_grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

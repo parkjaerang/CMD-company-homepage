@@ -1,0 +1,475 @@
+@import url("./common.css");
+
+/* =====================================================
+    포트폴리오 그리드 섹션
+===================================================== */
+#portfolio {
+    margin-bottom: clamp(60px, 10vw, 100px);
+    display: flex;
+    gap: clamp(36px, 6vw, 88px);
+    padding-top: 40px;
+}
+
+#portfolio h2 {
+    flex: 1;
+    font-size: clamp(30px, 4vw, 62px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    padding: clamp(0px, 8vw, 140px) 0 clamp(24px, 3vw, 48px);
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio_title_line {
+    display: inline-block;
+    opacity: 0;
+    animation: portfolioTitleFade 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.portfolio_title_line_left {
+    transform: translateX(-60px);
+    animation-delay: 0.1s;
+    margin-bottom: 15px;
+}
+
+.portfolio_title_line_right {
+    transform: translateX(60px);
+    animation-delay: 0.3s;
+}
+
+@keyframes portfolioTitleFade {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.portfolio_grid_wrap {
+    flex: 2;
+    min-width: 0;
+    aspect-ratio: 4 / 3;
+    margin: clamp(80px, 10vw, 140px) 0 clamp(24px, 3vw, 48px);
+}
+
+#portfolio .portfolio_grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "box1 box2 box2 box3"
+        "box4 box4 box5 box7"
+        "box4 box4 box6 box7";
+    gap: 2px;
+    background-color: var(--black);
+    outline: solid 2px var(--black);
+}
+
+.portfolio_box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio_box:nth-child(1) { grid-area: box1; }
+.portfolio_box:nth-child(2) { grid-area: box2; }
+.portfolio_box:nth-child(3) { grid-area: box3; }
+.portfolio_box:nth-child(4) { grid-area: box4; }
+.portfolio_box:nth-child(5) { grid-area: box5; }
+.portfolio_box:nth-child(6) { grid-area: box6; }
+.portfolio_box:nth-child(7) { grid-area: box7; }
+
+.portfolio_box .overlay {
+    width: 100%;
+    height: 100%;
+    padding: clamp(10px, 1.5vw, 40px);
+    align-content: end;
+    text-align: left;
+    background-color: var(--white);
+}
+
+.portfolio_box .overlay.overlay__title {
+    font-size: clamp(29px, 4vw, 57px);
+    font-weight: 900;
+    text-align: center;
+    transition: letter-spacing 0.3s ease;
+    align-content: center;
+}
+
+.portfolio_box .overlay.overlay__title:hover {
+    letter-spacing: 0.06em;
+}
+
+.portfolio_box .overlay > h3 {
+    font-size: clamp(14px, 2vw, 26px);
+    font-weight: 900;
+    color: var(--ink1);
+    letter-spacing: 0.05em;
+    margin-bottom: clamp(6px, .5vw, 12px);
+}
+
+.portfolio_box figure {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: outline-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio_box figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.portfolio_box figure::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.portfolio_box figure::before {
+    content: 'thumbnail example'; /* '' 으로 수정 */
+    position: absolute;
+    inset: 0;
+    border: 4px solid transparent;
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.portfolio_box figure:hover::after {
+    background: #0000003d;
+}
+
+.portfolio_box figure:hover::before {
+    border-color: #359bef;
+    /* box-shadow: inset 0 0 100px #359bef; */
+}
+
+.portfolio_box figure:hover img {
+    filter: brightness(1.05) contrast(1.05);
+}
+
+/* =====================================================
+    프로젝트 실적 목록
+===================================================== */
+#project_record {
+    display: flex;
+    gap: clamp(36px, 6vw, 88px);
+    min-height: unset;
+    margin-top: calc(var(--header-h) + 100px);
+}
+
+#project_record .record_header {
+    flex: 0 0 auto;
+    width: clamp(120px, 20vw, 300px);
+    position: sticky;
+    top: 200px;
+    align-self: flex-start;
+    margin-bottom:  clamp(40px, 8vw, 100px);
+}
+
+#project_record .record_title {
+    font-size: clamp(30px, 4vw, 62px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+}
+
+.record_title_line {
+    display: block;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.record_title_line_left {
+    transform: translateX(-60px);
+    margin-bottom: 15px;
+}
+
+.record_title_line_right {
+    transform: translateX(60px);
+}
+
+.record_title_line.in_view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.record_title_line_right.in_view {
+    transition-delay: 0.15s;
+}
+
+#project_record .list_wrap {
+    flex: 3;
+    width: 100%;
+}
+
+#project_record .record_group {
+    margin-bottom: clamp(16px, 3vw, 40px);
+    display: none;
+}
+
+#project_record .record_group--visible {
+    display: block;
+}
+
+#project_record .record_year {
+    font-size: clamp(22px, 2.5vw, 48px);
+    font-weight: 700;
+    color: #111;
+    margin-bottom: clamp(8px, 1.5vw, 20px);
+    padding-bottom: clamp(6px, 1vw, 12px);
+    border-bottom: 2px solid var(--black);
+    letter-spacing: -0.02em;
+}
+
+#project_record .record_list {
+    list-style: none;
+    padding-bottom: clamp(20px, 2vw, 40px);
+}
+
+#project_record .record_item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 clamp(16px, 2vw, 20px);
+    overflow: hidden;
+    cursor: default;
+    position: relative;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: max-height 0.5s ease, opacity 0.45s ease, transform 0.45s ease;
+}
+
+#project_record .record_item--linked {
+    cursor: pointer;
+}
+
+#project_record .record_item.visible {
+    max-height: 600px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#project_record .record_text {
+    flex: 1;
+    font-size: clamp(15px, 1.8vw, 28px);
+    font-weight: 400;
+    color: var(--black);
+    padding: clamp(14px, 1.5vw, 30px) 0;
+    letter-spacing: -0.02em;
+    transition: letter-spacing 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#project_record .record_item:hover .record_text {
+    letter-spacing: 0.04em;
+}
+
+/* =====================================================
+    더보기 버튼
+===================================================== */
+#project_record .morebtn_wrap {
+    display: flex;
+    justify-content: center;
+    padding: clamp(8px, 1vw, 14px) 0 clamp(30px, 4vw, 50px);
+    border-top: 2px solid var(--black);
+}
+
+#project_record .morebtn_wrap .morebtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: clamp(8px, 0.8vw, 11px) clamp(22px, 2.2vw, 32px);
+    font-size: clamp(12px, 0.9vw, 14px);
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.25s ease;
+}
+
+#project_record .morebtn_wrap .morebtn i {
+    font-size: 0.9em;
+    transition: transform 0.3s ease;
+}
+
+#project_record .morebtn_wrap .morebtn:hover {
+    opacity: 0.5;
+}
+
+#project_record .morebtn_wrap .morebtn:hover i {
+    animation: bounceDown 0.6s infinite alternate;
+}
+
+@keyframes bounceDown {
+    from { transform: translateY(0); }
+    to   { transform: translateY(4px); }
+}
+
+/* =====================================================
+    아코디언 (공통)
+===================================================== */
+
+/* 토글 버튼 */
+.record_toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--black);
+    opacity: 0.3;
+    transition: opacity 0.25s ease;
+    padding: 0;
+}
+
+.record_toggle i {
+    font-size: clamp(14px, 1.1vw, 17px);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.record_item--open .record_toggle {
+    opacity: 1;
+}
+
+.record_item--open .record_toggle i {
+    transform: rotate(180deg);
+}
+
+/* 아코디언 패널 */
+.record_accordion {
+    display: grid;
+    grid-template-rows: 0fr;
+    width: 100%;
+    transition: grid-template-rows 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.record_accordion_inner {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 1.2vw, 16px);
+    padding-bottom: 0;
+    transition: padding-bottom 0.4s ease;
+}
+
+.record_item--open .record_accordion {
+    grid-template-rows: 1fr;
+}
+
+.record_item--open .record_accordion_inner {
+    padding-bottom: clamp(16px, 1.5vw, 24px);
+}
+
+.record_accordion_inner img {
+    width: 100%;
+    aspect-ratio: 16 / 6;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    margin-top: 4px;
+}
+
+.record_accordion_text {
+    font-size: clamp(12px, 1.2vw, 20px);
+    font-weight: 400;
+    color: var(--ink2);
+    line-height: 1.8;
+    letter-spacing: -0.01em;
+    margin-top: 4px;
+}
+
+.record_accordion_btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-end;
+    font-size: clamp(12px, 1.5vw, 18px);
+    font-weight: 500;
+    color: var(--black);
+    text-decoration: none;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: clamp(6px, 0.6vw, 9px) clamp(14px, 1.4vw, 20px);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* =====================================================
+    반응형
+===================================================== */
+@media (max-width: 768px) {
+    #project_record {
+        margin-top: calc(var(--header-h) + 50px);
+    }
+
+    #project_record .record_num {
+        display: none;
+    }
+
+    #portfolio {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    #portfolio h2{
+        padding-top: 0;
+    }
+
+    #project_record {
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+
+    #project_record .record_header {
+        position: static;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 0;
+    }
+
+    .portfolio_grid_wrap {
+        margin: 0;
+    }
+
+    #portfolio .portfolio_grid {
+        gap: 1px;
+        outline: solid 1px var(--black);
+    }
+
+    #project_record .record_item--linked > a {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .record_accordion_btn:active {
+        background: var(--black);
+        color: var(--white);
+    }
+}

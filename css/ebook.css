@@ -1,0 +1,277 @@
+@import url(./common.css);
+
+/* =====================================================
+    히어로 — About 배지 영역
+===================================================== */
+#about {
+    position: relative;
+}
+
+/* =====================================================
+    Ebook 메인 레이아웃
+===================================================== */
+#Ebook {
+    display: flex;
+    justify-content: space-between;
+    gap: 3vw;
+    color: var(--black);
+    min-height: unset;
+    align-items: center;
+    margin-bottom: clamp(50px, 9vw, 250px);
+}
+
+#Ebook .title {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, 2vw, 20px);
+}
+
+#Ebook .title > h2 {
+    font-size: clamp(22px, 3.2vw, 62px);
+    font-weight: 800;
+}
+
+#Ebook .title > h3 {
+    font-size: clamp(17px, 1.6vw, 22px);
+    font-weight: 700;
+    padding-bottom: clamp(6px, 1vw, 10px);
+    border-bottom: 1px solid var(--ink3);
+    margin-top: clamp(10px, 1.5vw, 20px);
+}
+
+#Ebook .title > h4 {
+    font-size: clamp(10px, 1.6vw, 16px);
+    font-weight: 500;
+    color: var(--ink2);
+}
+
+#Ebook figure {
+    flex: 1;
+    height: fit-content;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+#Ebook img {
+    scale: 1;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+}
+
+#Ebook img:hover {
+    cursor: url('../img/click.png'), pointer;
+    transform: scale(1.08);
+    resize: none;
+}
+
+/* =====================================================
+    추천 대상 체크리스트
+===================================================== */
+#Ebook .title #recommend_list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.6vw, 14px);
+    font-size: clamp(14px, 1.6vw, 20px);
+    font-weight: 500;
+}
+
+#Ebook .title #recommend_list li label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#Ebook .title #recommend_list li label .recommend_check {
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    accent-color: var(--ink2);
+    cursor: pointer;
+}
+
+.recommend_msg {
+    margin-top: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+    font-size: clamp(16px, 1.6vw, 26px);
+    font-weight: bold;
+    color: var(--black);
+}
+
+.recommend_msg.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =====================================================
+    Ebook 텍스트 정보 영역
+===================================================== */
+#Ebook .text_wrap {
+    flex: 1;
+}
+
+#Ebook .text_wrap > h2 {
+    margin-bottom: clamp(10px, 2vw, 20px);
+    font-size: clamp(18px, 2.4vw, 32px);
+    font-weight: 900;
+    color: var(--black);
+}
+
+#Ebook .text_wrap .ebook_desc {
+    font-size: clamp(14px, 1.2vw, 18px);
+    font-weight: 400;
+    color: var(--ink2);
+    line-height: 1.7;
+    margin-bottom: clamp(15px, 2vw, 28px);
+}
+
+#Ebook .text_wrap > h3 {
+    font-size: clamp(17px, 1.6vw, 22px);
+    font-weight: 700;
+    padding-bottom: clamp(6px, 1vw, 10px);
+    border-bottom: 1px solid var(--ink3);
+}
+
+#Ebook .text_wrap > ul {
+    margin-bottom: clamp(10px, 2vw, 20px);
+    font-size: clamp(14px, 1.6vw, 20px);
+    font-weight: 500;
+}
+
+.service_list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.service_list li i {
+    color: var(--black);
+    font-size: 0.85em;
+    flex-shrink: 0;
+}
+
+#Ebook .service_list li {
+    padding: clamp(8px, 1.5vw, 12px) 0;
+    border-bottom: 1px solid var(--ink3);
+}
+
+/* =====================================================
+    구매 버튼
+===================================================== */
+.buy_btn {
+    max-width: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: clamp(20px, 2.5vw, 40px) 0;
+    padding: clamp(5px, 1.5vw, 16px) clamp(10px, 1.5vw, 25px);
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 50px;
+    font-size: clamp(12px, 1.5vw, 20px);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border: 2px solid var(--black);
+    gap: 12px;
+    transition: background-color 0.3s ease, color 0.3s ease, outline 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.buy_btn:hover {
+    background-color: var(--black);
+    color: var(--white);
+    letter-spacing: 0.06em;
+}
+
+.buy_btn i {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    flex-shrink: 0;
+}
+
+.buy_btn:hover i {
+    transform: translateX(6px);
+}
+
+/* =====================================================
+    스크롤 애니메이션
+===================================================== */
+.fade_up {
+    opacity: 0;
+    align-content: center;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade_up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.text_wrap > .line {
+    display: block;
+    margin: 10px 0;
+    height: 1px;
+    width: 0%;
+    background-color: var(--ink2);
+    transition: width 0.8s ease;
+}
+
+.text_wrap > .line.extra {
+    width: 100%;
+}
+
+/* =====================================================
+    Contact Us 섹션
+===================================================== */
+#contact_us {
+    background-color: var(--black);
+    color: var(--white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+#contact_us .open_modal_sub {
+    background-color: var(--black);
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+#contact_us .open_modal_sub:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+/* =====================================================
+    반응형
+===================================================== */
+@media (max-width: 575px) {
+    #about {
+        margin-top: 0;
+    }
+
+    #Ebook {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    #Ebook .title > h3 {
+        margin-top: 16px;
+    }
+
+    #Ebook figure {
+        width: 70%;
+        border-radius: 0px;
+    }
+
+    .buy_btn {
+        margin-bottom: 30px;
+    }
+
+    #Ebook .text_wrap > h2 {
+        margin-bottom: clamp(12px, 2vw, 24px);
+    }
+    
+    .recommend_msg {
+        margin-bottom: 8px;
+    }
+}
