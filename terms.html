@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMD Company | 씨엠디컴퍼니</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./js/api.js" defer></script>
+    <script src="./common.js"></script>
+    <script src="https://kit.fontawesome.com/2eb47fcd7e.js" crossorigin="anonymous"></script>
+    <style>
+        @import url(../css/common.css);
+
+        main {
+            margin-bottom: 150px;
+            padding: clamp(20px, 3vw, 40px) clamp(16px, 4vw, 50px) clamp(10px, 2vw, 20px);
+        }
+
+        .terms {
+            max-width: 1000px;
+            margin: auto;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 160px;
+            padding: 0;
+        }
+
+        .terms>h1 {
+            margin-bottom: 40px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .article {
+            margin-bottom: 40px;
+        }
+
+        .article>h2 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .article p {
+            margin-bottom: 10px;
+        }
+
+        .article ul,
+        .article p {
+            padding-left: 20px;
+        }
+
+        .article li {
+            margin-bottom: 5px;
+        }
+      
+        #fixed_contact_btn {
+            display: none;
+        }
+
+        /* 태블릿 (768px 이하) */
+        @media (max-width: 768px) {
+            main {
+                margin-bottom: 100px;
+            }
+
+            .terms {
+                margin-top: 120px;
+                font-size: 11px;
+            }
+
+            .terms>h1 {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+
+            .article>h2 {
+                font-size: 16px;
+            }
+
+            .article {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+
+    <main>
+        <section class="terms">
+
+            <h1>이용약관</h1>
+
+            <div class="article">
+                <h2>제1조 (목적)</h2>
+                <p>
+                    본 약관은 주식회사 씨엠디컴퍼니(이하 "회사")가 운영하는 홈페이지(https://cmdcompany.co.kr/)에서
+                    제공하는 서비스의 이용과 관련하여 회사와 이용자의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+                </p>
+            </div>
+
+            <div class="article">
+                <h2>제2조 (정의)</h2>
+                <ul>
+                    <li>"사이트"란 회사가 운영하는 웹사이트를 의미합니다.</li>
+                    <li>"이용자"란 사이트에 접속하여 본 약관에 따라 회사가 제공하는 서비스를 이용하는 자를 의미합니다.</li>
+                    <li>"서비스"란 회사가 제공하는 병원 컨설팅, 마케팅, 홈페이지 제작 및 기타 관련 서비스를 의미합니다.</li>
+                </ul>
+            </div>
+
+            <div class="article">
+                <h2>제3조 (약관의 효력 및 변경)</h2>
+                <ul>
+                    <li>본 약관은 사이트에 게시함으로써 효력이 발생합니다.</li>
+                    <li>회사는 관련 법령을 위반하지 않는 범위에서 약관을 변경할 수 있습니다.</li>
+                    <li>변경된 약관은 사이트에 공지함으로써 효력이 발생합니다.</li>
+                </ul>
+            </div>
+
+            <div class="article">
+                <h2>제4조 (서비스의 제공)</h2>
+                <p>회사는 다음과 같은 서비스를 제공합니다.</p>
+                <ul>
+                    <li>병원 컨설팅</li>
+                    <li>병원 마케팅</li>
+                    <li>홈페이지 기획 및 제작</li>
+                    <li>문의 상담 서비스</li>
+                    <li>기타 회사가 정하는 서비스</li>
+                </ul>
+            </div>
+
+            <div class="article">
+                <h2>제5조 (서비스 이용 제한)</h2>
+                <p>회사는 다음 행위를 하는 이용자에 대해 서비스 이용을 제한할 수 있습니다.</p>
+                <ul>
+                    <li>법령 또는 공공질서에 반하는 행위</li>
+                    <li>타인의 권리를 침해하는 행위</li>
+                    <li>사이트 운영을 방해하는 행위</li>
+                    <li>허위 정보 입력 행위</li>
+                </ul>
+            </div>
+
+            <div class="article">
+                <h2>제6조 (지식재산권)</h2>
+                <ul>
+                    <li>사이트 내 모든 콘텐츠의 저작권은 회사에 귀속됩니다.</li>
+                    <li>이용자는 회사의 사전 동의 없이 콘텐츠를 복제, 배포, 수정할 수 없습니다.</li>
+                </ul>
+            </div>
+
+            <div class="article">
+                <h2>제7조 (면책조항)</h2>
+                <ul>
+                    <li>회사는 천재지변, 서버 장애 등 불가항력으로 인한 서비스 중단에 대해 책임을 지지 않습니다.</li>
+                    <li>회사는 이용자가 사이트 정보를 활용하여 발생한 손해에 대해 책임을 지지 않습니다.</li>
+                </ul>
+            </div>
+
+            <div class="article">
+                <h2>제8조 (개인정보 보호)</h2>
+                <p>
+                    회사는 관련 법령이 정하는 바에 따라 이용자의 개인정보를 보호하며,
+                    자세한 사항은 개인정보처리방침에 따릅니다.
+                </p>
+            </div>
+
+            <div class="article">
+                <h2>제9조 (관할법원)</h2>
+                <p>
+                    본 약관과 관련된 분쟁은 회사 본점 소재지를 관할하는 법원을 전속 관할법원으로 합니다.
+                </p>
+            </div>
+
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
